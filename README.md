@@ -3,6 +3,8 @@
 This projects offers a way to easily compose templates directly from the 
 command line, ideal to use in junction with other cli utilities.
 
+You could check the examples under the `examples` directory and check the	[Quick Guid](https://github.com/ekiim/jinjasimplecli/blob/master/docs/guide.md).
+
 By running `jinja-cli --help` on your terminal, you'll get all the basic functioning for the tool.
 
 ```
