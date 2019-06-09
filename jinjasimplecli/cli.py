@@ -26,23 +26,23 @@ def main():
                         type=jinjasimplecli.main.load_json,
                         metavar="DATAFILE"
                         )
-    parser.add_argument('--extensions-file', '--config',
+    parser.add_argument('--extensions-file', '--config', '-c',
                         help=("A python file that includes the functions you and"
                               " additional enviroment changes."),
                         default=None,
-                        dest="data",
+                        dest="config",
                         type=jinjasimplecli.main.load_config,
                         metavar="CONFIGFILE"
                       )
-    parser.add_argument('template', 
+    parser.add_argument('template',
                         help="Path to template you want to build/compose",
-                        nargs='?', 
+                        nargs='?',
                         metavar="TargetTemplate",
                         type=argparse.FileType('r'),
                         default=sys.stdin)
     parser.add_argument('-o',
                         help="Where will the rendered template will be outputed",
-                        nargs='?', 
+                        nargs='?',
                         dest="output",
                         metavar="OUTPUT",
                         type=argparse.FileType('w'),
