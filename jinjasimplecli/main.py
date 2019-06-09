@@ -2,13 +2,14 @@
 """
 
 import json
+import importlib.util
 import os
 import sys
 
+
 import jinja2 as j
 
-#def load_global_functions(env, functions={}):
-#    env.global.update(**functions)
+import jinjasimplecli.extensions as je
 
 def main(template_dir, template=None, output=None, data={}):
     env = j.Environment(
@@ -17,7 +18,7 @@ def main(template_dir, template=None, output=None, data={}):
             j.PrefixLoader({ 'content': j.FileSystemLoader('./content')})
         ])
     )
-    #    load_global_functions(env, functions)
+    load_to_enviroment(env)
     temp_ref = env.from_string(template.read())
     rendered = temp_ref.render(**data)
     output.write(rendered)
@@ -38,6 +39,18 @@ def load_json(filename=None):
         raise argparse.ArgumentTypeError(
             'Unkwon error occur while attempting to open JSON file')
     return data
+
+
+def load_config(filename):
+    spec = importlib.util.spec_from_file_location('user_extensions', filename)
+    module = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(module)
+
+
+
+def load_to_enviroment(env):
+    for name, function in je.__custom_functions__['filters'].items():
+        env.filters[name] = function
 
 if __name__ == '__main__':
     pass
