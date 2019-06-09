@@ -17,7 +17,7 @@ setup(
                    "template inheritance and global functions. It uses "
                    "json files as input for the data, and it can handle "
                    "templates from standard input."),
-    long_description=load_from_file('README'),
+    long_description=load_from_file('README.md'),
     license = "BSD",
     keywords = "jinja templates cli",
     url = "https://github.com/ekiim/jinjasimplecli",
