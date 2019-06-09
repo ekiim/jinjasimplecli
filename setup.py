@@ -21,7 +21,7 @@ setup(
     license = "BSD",
     keywords = "jinja templates cli",
     url = "https://github.com/ekiim/jinjasimplecli",
-    packages=['an_example_pypi_project', 'tests'],
+    packages=['jinjasimplecli'],
     entry_points={
         'console_scripts': [
             'jinja-cli = jinjasimplecli.cli:main',
