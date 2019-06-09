@@ -1,0 +1,4 @@
+Parent Template
+{% block example %} 
+No inheritance applied
+{% endblock %}

@@ -1,0 +1,4 @@
+{% extends 'parent.txt' %}
+{% block example %}
+I'm a child block
+{% endblock %}

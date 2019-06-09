@@ -1,0 +1,5 @@
+In this document we only have one
+variable to fill and this will be 
+
+This one: {{ externalword }}
+

@@ -1,0 +1,3 @@
+Filter Example
+{{ 42 | helloworld }}
+
