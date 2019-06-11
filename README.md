@@ -77,4 +77,4 @@ Jinja Simple CLI is licensed under the [BSD 3-Clause license][license].
 
 
 [jinja]: http://jinja.pocoo.org/docs/2.10/api/
-[license]: ../blob/master/LICENSE
+[license]: blob/master/LICENSE
