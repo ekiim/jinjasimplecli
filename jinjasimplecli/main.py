@@ -48,7 +48,7 @@ def main(template_dir, template=None, output=None, data={}, **kwargs):
     output.write(rendered)
 
 
-def load_json(streamname=None):
+def load_json(stream):
     """load_json
     This function recieves the path to a json file and loads it.
     If no file provided or can't find file, it will return an
@@ -56,9 +56,9 @@ def load_json(streamname=None):
     If any errors occure it will raise an `argparse.ArgumentErrorType`
     because this function runs when the argument is first loaded.
     """
+    data = {}
     try:
-        with open(streamname) as stream:
-            data = json.load(stream)
+        data = json.loads(stream.read() or '{}')
     except json.JSONDecodeError as e:
         raise argparse.ArgumentTypeError('Error Decoding JSON file')
     except OSError:
